@@ -6,7 +6,7 @@ import PortfolioSummary from "./components/PortfolioSummary"
 import HistoryChart from "./components/HistoryChart"
 import RiskCard from "./components/RiskCard"
 
-const API = "http://localhost:8000"
+const API = "https://nisa-tracker.onrender.com"
 
 export default function App() {
   const [prices, setPrices] = useState(null)

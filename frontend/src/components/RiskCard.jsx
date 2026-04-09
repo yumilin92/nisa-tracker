@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
 
-const API = "http://localhost:8000"
+const API = "https://nisa-tracker.onrender.com"
 
 export default function RiskCard({ positions }) {
   const [risk, setRisk]       = useState(null)

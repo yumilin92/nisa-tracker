@@ -5,7 +5,7 @@ import {
   Tooltip, ResponsiveContainer
 } from "recharts"
 
-const API = "http://localhost:8000"
+const API = "https://nisa-tracker.onrender.com"
 
 const FUNDS = [
   { value: "emaxis_sp500",      label: "eMAXIS Slim S&P500" },
