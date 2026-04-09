@@ -1,0 +1,403 @@
+/* ── Reset & base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+/* ── Layout ── */
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* ── Header ── */
+header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: #666;
+  margin-top: 0.4rem;
+  font-size: 1rem;
+}
+
+/* ── Section titles ── */
+h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+/* ── Live price cards ── */
+.prices-section { margin-bottom: 2.5rem; }
+
+.price-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.price-card {
+  background: white;
+  border-radius: 14px;
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.15s;
+}
+
+.price-card:hover { transform: translateY(-2px); }
+
+.price-label {
+  font-size: 0.85rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.price-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+/* ── Portfolio form ── */
+.portfolio-form {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.portfolio-form select,
+.portfolio-form input {
+  padding: 0.65rem 1.2rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  background: white;
+  transition: border-color 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.portfolio-form select:focus,
+.portfolio-form input:focus { border-color: #4f46e5; }
+
+.portfolio-form select {
+  min-width: 220px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.portfolio-form input {
+  width: 180px;
+}
+
+/* Remove number input arrows */
+.portfolio-form input[type=number]::-webkit-outer-spin-button,
+.portfolio-form input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.portfolio-form button {
+  padding: 0.65rem 1.4rem;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.portfolio-form button:hover { background: #4338ca; }
+
+/* ── Portfolio table ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  margin-bottom: 1.5rem;
+}
+
+th {
+  background: #f8f8fb;
+  padding: 0.9rem 1rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #888;
+}
+
+td {
+  padding: 0.9rem 1rem;
+  font-size: 0.95rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+tr:hover td { background: #fafafa; }
+
+.positive { color: #16a34a; font-weight: 600; }
+.negative { color: #dc2626; font-weight: 600; }
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+.remove-btn:hover { color: #dc2626; }
+
+/* ── Totals ── */
+.totals {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.total-item {
+  background: white;
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.total-item span { font-size: 0.85rem; color: #888; }
+.total-item strong { font-size: 1.4rem; font-weight: 700; }
+
+/* ── NISA progress bar ── */
+.nisa-limits {
+  background: white;
+  border-radius: 14px;
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.nisa-limits h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #f0f0f0;
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4f46e5, #818cf8);
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+
+.nisa-limits p { font-size: 0.85rem; color: #888; }
+
+/* ── History chart ── */
+.chart-section { margin-top: 2.5rem; }
+
+.history-chart {
+  background: white;
+  border-radius: 14px;
+  padding: 1.6rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.chart-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.chart-fund-tabs, .chart-period-tabs {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.tab-btn, .period-btn {
+  padding: 0.4rem 1rem;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 99px;
+  background: white;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #666;
+}
+
+.tab-btn.active, .period-btn.active {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  color: white;
+  font-weight: 600;
+}
+
+.chart-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.chart-latest {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.chart-change {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.chart-loading {
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+}
+
+.chart-tooltip {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.tooltip-date { font-size: 0.8rem; color: #888; margin-bottom: 0.2rem; }
+.tooltip-price { font-size: 1rem; font-weight: 700; }
+
+/* ── Risk card ── */
+.risk-section { margin-bottom: 2.5rem; }
+
+.risk-card {
+  background: white;
+  border-radius: 14px;
+  padding: 1.6rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.risk-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.risk-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.risk-badge {
+  padding: 0.3rem 0.9rem;
+  border-radius: 99px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.risk-vol {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.risk-vol-number {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.risk-vol-label {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.risk-interpretation {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  padding: 0.8rem 1rem;
+  background: #f8f8fb;
+  border-radius: 10px;
+}
+
+.risk-assets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.risk-asset-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.risk-asset-name {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.risk-asset-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.risk-asset-vol {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.risk-asset-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
